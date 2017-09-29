@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+	<!-- Domain model configuration -->
+	<solutionClass>com.example.cloudbalance.CloudBalance</solutionClass>
+  	<entityClass>com.example.cloudbalance.CloudProcess</entityClass>
+	<!-- Score configuration -->
+	<scoreDirectorFactory>
+		<easyScoreCalculatorClass>com.example.cloudbalance.CloudBalancingEasyScoreCalculator</easyScoreCalculatorClass>
+		<!-- <scoreDrl>org/optaplanner/examples/cloudbalancing/solver/cloudBalancingScoreRules. 
+			drl</scoreDrl> -->
+	</scoreDirectorFactory>
+	<!-- Optimization algorithms configuration -->
+	<termination>
+		<secondsSpentLimit>30</secondsSpentLimit>
+	</termination>
+	<constructionHeuristic>
+		<constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+	</constructionHeuristic>
+</solver>

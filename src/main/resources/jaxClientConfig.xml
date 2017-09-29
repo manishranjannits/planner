@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+    xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xsi:schemaLocation="http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+        http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd
+        http://cxf.apache.org/transports/http/configuration 
+		http://cxf.apache.org/schemas/configuration/http-conf.xsd">
+
+	<import resource="classpath*:META-INF/cxf/cxf-servlet.xml" />
+	<import resource="classpath*:META-INF/cxf/cxf-extension-http.xml" /> 
+	
+	<!-- Set up the receive timeout of all HTTP connections created by the Apache CXF Bus. -->
+
+    <!--
+    <http-conf:conduit name="*.http-conduit">
+      <http-conf:client ReceiveTimeout="300000"/>
+    </http-conf:conduit>-->
+	
+    
+   <!-- Set up the JAXWS Client for Search/Booking of HT -->
+   	<!-- <jaxws:client id="hotelTravelClient" serviceClass="com.mmt.hoteltravel.model.ProductServicesSoap" address="http://ht-search.ht.ht/ProductServices.asmx">
+		 <jaxws:properties>
+			<entry key="set-jaxb-validation-event-handler" value="false" />
+		</jaxws:properties>
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor"/>
+		</jaxws:inInterceptors>
+		<jaxws:binding>
+       		<soap:soapBinding version="1.2"/> 
+   		</jaxws:binding>
+	</jaxws:client>
+	
+	added for handing B2E requests
+	<jaxws:client id="hotelTravelClientB2E" serviceClass="com.mmt.hoteltravel.model.ProductServicesSoap" address="http://ht-search-oth.mmt.mmt/ProductServices.asmx">
+		<jaxws:properties>
+				<entry key="set-jaxb-validation-event-handler" value="false" />
+		</jaxws:properties>
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor" />
+		</jaxws:inInterceptors>
+			<jaxws:binding>
+	        	<soap:soapBinding version="1.2"/> 
+	    	</jaxws:binding>
+	</jaxws:client> -->
+
+</beans>

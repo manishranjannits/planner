@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+	<!-- Domain model configuration -->
+	<solutionClass>com.trip.dayplanner.ItinerarySolution</solutionClass>
+  	<entityClass>com.trip.dayplanner.Activity</entityClass>
+	<!-- Score configuration -->
+	<scoreDirectorFactory>
+		<easyScoreCalculatorClass>com.trip.dayplanner.ItineraryScoreCalculator</easyScoreCalculatorClass>
+		<!-- <scoreDrl>org/optaplanner/examples/cloudbalancing/solver/cloudBalancingScoreRules. 
+			drl</scoreDrl> -->
+	</scoreDirectorFactory>
+	<!-- Optimization algorithms configuration -->
+	<termination>
+		<secondsSpentLimit>30</secondsSpentLimit>
+	</termination>
+	<constructionHeuristic>
+		<constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+	</constructionHeuristic>
+</solver>
